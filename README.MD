@@ -17,6 +17,7 @@ Proyek ini dikembangkan untuk pembelajaran **Pemrograman Berorientasi Objek** de
 
 ## 🧱 Struktur Proyek
 
+```bash
 neo-perpus/
 │
 ├── app/
@@ -57,7 +58,7 @@ neo-perpus/
 ├── routes/web.php
 ├── composer.json
 └── README.md
-
+```
 
 ---
 
