@@ -21,43 +21,100 @@ Proyek ini dikembangkan untuk pembelajaran **Pemrograman Berorientasi Objek** de
 neo-perpus/
 │
 ├── app/
-│ ├── Http/Controllers/
-│ │ ├── AdminController.php
-│ │ ├── AnggotaController.php
-│ │ ├── BukuController.php
-│ │ ├── DendaController.php
-│ │ ├── PeminjamanController.php
-│ │ ├── AuthController.php
-│ │ └── HomeController.php
-│ ├── Http/Middleware/
-│ │ ├── Authenticate.php
-│ │ └── AdminMiddleware.php
-│ └── Models/
-│ ├── Admin.php
-│ ├── Anggota.php
-│ ├── Buku.php
-│ ├── Peminjaman.php
-│ └── Denda.php
+│ ├── Http/
+│ │ ├── Controllers/
+│ │ │ ├── AdminController.php
+│ │ │ ├── AnggotaController.php
+│ │ │ ├── AuthController.php
+│ │ │ ├── BukuController.php
+│ │ │ ├── DendaController.php
+│ │ │ ├── HomeController.php
+│ │ │ └── PeminjamanController.php
+│ │ └── Middleware/
+│ │ ├── AdminMiddleware.php
+│ │ └── Authenticate.php
+│ │
+│ ├── Models/
+│ │ ├── Admin.php
+│ │ ├── Anggota.php
+│ │ ├── Buku.php
+│ │ ├── Peminjaman.php
+│ │ └── Denda.php
+│ │
+│ └── Providers/
+│ └── AppServiceProvider.php
 │
 ├── database/
-│ ├── migrations/ # Struktur tabel database
-│ ├── seeders/ # Data awal (AdminSeeder, BukuSeeder)
+│ ├── migrations/
+│ │ ├── 2025_10_01_000001_create_admin_table.php
+│ │ ├── 2025_10_01_000002_create_anggota_table.php
+│ │ ├── 2025_10_01_000003_create_buku_table.php
+│ │ ├── 2025_10_01_000004_create_peminjaman_table.php
+│ │ └── 2025_10_01_000005_create_denda_table.php
+│ ├── seeders/
+│ │ ├── AdminSeeder.php
+│ │ ├── BukuSeeder.php
+│ │ └── DatabaseSeeder.php
 │ └── factories/
+│ ├── BukuFactory.php
+│ └── AnggotaFactory.php
 │
 ├── public/
-│ ├── css/style.css
+│ ├── css/
+│ │ └── style.css
 │ ├── js/
+│ │ └── main.js
+│ ├── images/
+│ │ ├── logo.png
+│ │ └── covers/
 │ └── index.php
 │
-├── resources/views/
-│ ├── layouts/ # Template utama
-│ ├── auth/ # Login & register
-│ ├── home/ # Beranda & katalog
-│ └── admin/ # Dashboard & CRUD
+├── resources/
+│ ├── views/
+│ │ ├── layouts/
+│ │ │ ├── main.blade.php
+│ │ │ └── admin.blade.php
+│ │ ├── auth/
+│ │ │ ├── login.blade.php
+│ │ │ └── register.blade.php
+│ │ ├── home/
+│ │ │ ├── index.blade.php
+│ │ │ ├── katalog.blade.php
+│ │ │ └── detail.blade.php
+│ │ └── admin/
+│ │ ├── dashboard.blade.php
+│ │ ├── buku/
+│ │ │ ├── index.blade.php
+│ │ │ ├── create.blade.php
+│ │ │ └── edit.blade.php
+│ │ ├── anggota/
+│ │ │ ├── index.blade.php
+│ │ │ ├── create.blade.php
+│ │ │ └── edit.blade.php
+│ │ ├── peminjaman/
+│ │ │ ├── index.blade.php
+│ │ │ ├── create.blade.php
+│ │ │ └── edit.blade.php
+│ │ └── denda/
+│ │ ├── index.blade.php
+│ │ ├── create.blade.php
+│ │ └── edit.blade.php
+│ │
+│ └── css/
+│ └── app.css
 │
-├── routes/web.php
+├── routes/
+│ ├── web.php
+│ └── api.php
+│
+├── config/
+│ ├── app.php
+│ └── database.php
+│
+├── .env
+├── artisan
 ├── composer.json
-└── README.md
+└── package.json
 ```
 
 ---
