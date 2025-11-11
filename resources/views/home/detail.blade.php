@@ -7,11 +7,11 @@
     <p><strong>Tahun:</strong> {{ $buku->tahun_terbit }}</p>
     <p><strong>Deskripsi:</strong> {{ $buku->deskripsi }}</p>
 
-    @if (session('role') == 'anggota')
+    <!-- @if (session('role') == 'anggota')
         <form action="#" method="POST">
             <button type="submit">Pinjam Buku</button>
         </form>
     @else
         <p><a href="{{ url('/login') }}">Login</a> untuk meminjam buku.</p>
-    @endif
+    @endif -->
 @endsection
