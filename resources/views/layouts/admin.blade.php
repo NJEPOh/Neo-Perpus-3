@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <header style="background:#444;color:white;padding:10px;">
+    <header style="background:#444;color:black;padding:10px;">
         <h2>Admin Panel</h2>
         <nav>
             <a href="{{ url('/admin') }}" style="color:white;">Dashboard</a> |

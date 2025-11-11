@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Anggota;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -24,6 +25,7 @@ class AuthController extends Controller
         // Cek login admin dulu
         $admin = Admin::where('username', $request->username)->first();
         if ($admin && Hash::check($request->password, $admin->password)) {
+            Auth::login($admin);
             session(['role' => 'admin', 'id_admin' => $admin->id_admin, 'nama' => $admin->nama]);
             return redirect('/admin');
         }
@@ -31,6 +33,7 @@ class AuthController extends Controller
         // Cek login anggota
         $anggota = Anggota::where('email', $request->username)->first();
         if ($anggota && Hash::check($request->password, $anggota->password)) {
+            Auth::login($anggota);
             session(['role' => 'anggota', 'id_anggota' => $anggota->id_anggota, 'nama' => $anggota->nama]);
             return redirect('/');
         }
@@ -63,6 +66,7 @@ class AuthController extends Controller
 
     public function logout()
     {
+        Auth::logout();
         session()->flush();
         return redirect('/login');
     }
