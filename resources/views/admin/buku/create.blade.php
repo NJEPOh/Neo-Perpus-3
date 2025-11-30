@@ -1,38 +1,126 @@
 @extends('layouts.admin')
 @section('content')
+
+    <style>
+        /* ============================
+           STYLE: TAMBAH BUKU BARU
+        ============================ */
+
+        h3 {
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Error alert */
+        .error-box {
+            background: #ffe0e0;
+            border-left: 5px solid #ff5c5c;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #b30000;
+            font-size: 14px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #2a4bd7;
+            box-shadow: 0 0 4px rgba(42, 75, 215, 0.3);
+        }
+
+        textarea {
+            min-height: 90px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background: #2a4bd7;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #1d3abf;
+            transform: translateY(-2px);
+        }
+    </style>
+
     <h3>Tambah Buku Baru</h3>
 
-    @if ($errors->any())
-        <div style="color:red;">
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-    @endif
+    <div class="form-box">
 
-    <form action="{{ route('buku.store') }}" method="POST">
-        @csrf
-        <label>Judul:</label><br>
-        <input type="text" name="judul" required><br><br>
+        @if ($errors->any())
+            <div class="error-box">
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
 
-        <label>Penulis:</label><br>
-        <input type="text" name="penulis" required><br><br>
+        <form action="{{ route('buku.store') }}" method="POST">
+            @csrf
 
-        <label>Penerbit:</label><br>
-        <input type="text" name="penerbit" required><br><br>
+            <label>Judul:</label>
+            <input type="text" name="judul" required>
 
-        <label>Kategori:</label><br>
-        <input type="text" name="kategori" required><br><br>
+            <label>Penulis:</label>
+            <input type="text" name="penulis" required>
 
-        <label>Tahun Terbit:</label><br>
-        <input type="number" name="tahun_terbit" required><br><br>
+            <label>Penerbit:</label>
+            <input type="text" name="penerbit" required>
 
-        <label>Deskripsi:</label><br>
-        <textarea name="deskripsi"></textarea><br><br>
+            <label>Kategori:</label>
+            <input type="text" name="kategori" required>
 
-        <label>Stok:</label><br>
-        <input type="number" name="stok" required><br><br>
+            <label>Tahun Terbit:</label>
+            <input type="number" name="tahun_terbit" required>
 
-        <button type="submit">Simpan</button>
-    </form>
+            <label>Deskripsi:</label>
+            <textarea name="deskripsi"></textarea>
+
+            <label>Stok:</label>
+            <input type="number" name="stok" required>
+
+            <button type="submit">Simpan</button>
+        </form>
+
+    </div>
+
 @endsection

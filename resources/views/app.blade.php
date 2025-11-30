@@ -1,49 +1,148 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @class(['dark' => ($appearance ?? 'system') == 'dark'])>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.admin')
 
-        {{-- Inline script to detect system dark mode preference and apply it immediately --}}
-        <script>
-            (function() {
-                const appearance = '{{ $appearance ?? "system" }}';
+@section('content')
+    <div class="container-page">
 
-                if (appearance === 'system') {
-                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        <h2 class="page-title">Data Buku</h2>
 
-                    if (prefersDark) {
-                        document.documentElement.classList.add('dark');
-                    }
-                }
-            })();
-        </script>
+        <a href="{{ route('buku.create') }}" class="btn-add">+ Tambah Buku</a>
 
-        {{-- Inline style to set the HTML background color based on our theme in app.css --}}
-        <style>
-            html {
-                background-color: oklch(1 0 0);
-            }
+        <div class="table-wrapper">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Judul</th>
+                        <th>Penulis</th>
+                        <th>Kategori</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($buku as $item)
+                        <tr>
+                            <td>{{ $item->id_buku }}</td>
+                            <td>{{ $item->judul }}</td>
+                            <td>{{ $item->penulis }}</td>
+                            <td>{{ $item->kategori }}</td>
+                            <td>{{ $item->stok }}</td>
+                            <td>
+                                <a href="{{ route('buku.edit', $item->id_buku) }}">Edit</a>
 
-            html.dark {
-                background-color: oklch(0.145 0 0);
-            }
-        </style>
+                                <form action="{{ route('buku.destroy', $item->id_buku) }}" method="POST"
+                                    style="display:inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+    </div>
 
-        <link rel="icon" href="/favicon.ico" sizes="any">
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    {{-- ================= CSS ================= --}}
+    <style>
+        /* === GLOBAL === */
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f8f9fb;
+            margin: 0;
+            padding: 0;
+            color: #1b1b1b;
+        }
 
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+        .container-page {
+            padding: 30px;
+        }
 
-        @viteReactRefresh
-        @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
-    </body>
-</html>
+        /* === TITLE === */
+        .page-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        /* === BUTTON TAMBAH === */
+        .btn-add {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #111;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.2s ease;
+        }
+
+        .btn-add:hover {
+            background: #333;
+        }
+
+        /* === TABLE MODERN FLOATING === */
+        .table-wrapper {
+            margin-top: 25px;
+        }
+
+        table.modern-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+        }
+
+        table.modern-table thead th {
+            text-align: left;
+            padding: 10px 16px;
+            font-size: 13px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Card baris */
+        table.modern-table tbody tr {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: 0.2s ease;
+        }
+
+        table.modern-table tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+        }
+
+        table.modern-table tbody td {
+            padding: 14px 16px;
+            font-size: 14px;
+        }
+
+        /* === LINK & ACTION === */
+        table.modern-table tbody td a {
+            color: #0071ff;
+            font-weight: 500;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        table.modern-table tbody td a:hover {
+            text-decoration: underline;
+        }
+
+        table.modern-table tbody td form button {
+            border: none;
+            background: transparent;
+            color: #ff4444;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        table.modern-table tbody td form button:hover {
+            text-decoration: underline;
+        }
+    </style>
+@endsection
