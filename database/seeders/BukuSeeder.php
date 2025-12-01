@@ -12,7 +12,7 @@ class BukuSeeder extends Seeder
         $data = [
             [
                 'judul' => 'Pemrograman Laravel Dasar',
-                'penulis' => 'Hafidz Alif',
+                'penulis' => 'Agus Salim',
                 'penerbit' => 'TeknoPress',
                 'kategori' => 'Pemrograman',
                 'tahun_terbit' => 2023,
@@ -75,7 +75,7 @@ class BukuSeeder extends Seeder
             ],
             [
                 'judul' => 'React Native untuk Pemula',
-                'penulis' => 'Hafiz Alif',
+                'penulis' => 'Varla Sakti',
                 'penerbit' => 'Code House',
                 'kategori' => 'Pemrograman',
                 'tahun_terbit' => 2023,
