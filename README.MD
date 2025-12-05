@@ -4,7 +4,7 @@
 - Hafidz Alif Ramadhan (K3524055)
 - Varrel Ferryanto (K3524069)
 
-### Universitas Sebelas Maret (UNS)
+## Universitas Sebelas Maret (UNS)
 ## Pendidikan Teknik Informatika dan Komputer
 ## 2025
 
