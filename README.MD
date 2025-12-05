@@ -1,3 +1,13 @@
+### 👨‍💻 Pengembang
+- Arif Nur Hidayah (K3524007)
+-Tedy Darmawan (K3524037)
+-Hafidz Alif Ramadhan (K3524055)
+-Varrel Ferryanto (K3524069)
+
+### Universitas Sebelas Maret (UNS)
+## Pendidikan Teknik Informatika dan Komputer
+## 2025
+
 # 📚 NeoPerpus — Sistem Informasi Perpustakaan Digital
 
 NeoPerpus adalah aplikasi manajemen perpustakaan berbasis **Laravel 12**, dirancang agar admin dan anggota dapat mengelola data buku, peminjaman, dan denda dengan mudah.  
@@ -237,15 +247,3 @@ http://127.0.0.1:8000
 - Integrasi database yang lancar
 - Autentikasi manual sederhana
 - Tampilan wireframe yang ringan dan cepat
-
-
-### 👨‍💻 Pengembang
-- NJEPOh
-- Jovan2K
-- Hidayah1412
-- Arrel99
-
-
-### Universitas Sebelas Maret (UNS)
-## Pendidikan Teknik Informatika dan Komputer
-## 2025
