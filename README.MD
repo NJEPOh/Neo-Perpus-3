@@ -1,8 +1,8 @@
 ### 👨‍💻 Pengembang
 - Arif Nur Hidayah (K3524007)
--Tedy Darmawan (K3524037)
--Hafidz Alif Ramadhan (K3524055)
--Varrel Ferryanto (K3524069)
+- Tedy Darmawan (K3524037)
+- Hafidz Alif Ramadhan (K3524055)
+- Varrel Ferryanto (K3524069)
 
 ### Universitas Sebelas Maret (UNS)
 ## Pendidikan Teknik Informatika dan Komputer
