@@ -1,12 +1,8 @@
-### 👨‍💻 Pengembang
+## 👨‍💻 Kelompok 1
 - Arif Nur Hidayah (K3524007)
 - Tedy Darmawan (K3524037)
 - Hafidz Alif Ramadhan (K3524055)
 - Varrel Ferryanto (K3524069)
-
-## Universitas Sebelas Maret (UNS)
-## Pendidikan Teknik Informatika dan Komputer
-## 2025
 
 # 📚 NeoPerpus — Sistem Informasi Perpustakaan Digital
 
@@ -192,7 +188,7 @@ http://127.0.0.1:8000
 | Peran    | Username                                    | Password |
 | :------- | :------------------------------------------ | :------- |
 | Admin    | admin                                       | admin123 |
-| User Tes | [test@example.com](mailto:test@example.com) | password |
+| User Tes | [test@example.com](mailto:test@example.com) | anggota123 |
 
 
 ### 🧩 Alur Fitur
@@ -247,3 +243,7 @@ http://127.0.0.1:8000
 - Integrasi database yang lancar
 - Autentikasi manual sederhana
 - Tampilan wireframe yang ringan dan cepat
+
+## Universitas Sebelas Maret (UNS)
+## Pendidikan Teknik Informatika dan Komputer
+## 2025

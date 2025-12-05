@@ -15,6 +15,11 @@ class AnggotaSeeder extends Seeder
 
         $data = [
             [
+                'nama' => 'test user',
+                'email' => 'test@example.com',
+                'password' => $passwordDefault,
+            ],
+            [
                 'nama' => 'Andi Pratama',
                 'email' => 'andi.pratama@student.com',
                 'password' => $passwordDefault,
@@ -113,7 +118,7 @@ class AnggotaSeeder extends Seeder
                 'nama' => 'Siska Wulandari',
                 'email' => 'siska.wulandari@student.com',
                 'password' => $passwordDefault,
-                
+
             ],
         ];
 
