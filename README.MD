@@ -187,7 +187,7 @@ http://127.0.0.1:8000
 
 | Peran    | Username                                    | Password |
 | :------- | :------------------------------------------ | :------- |
-| Admin    | admin                                       | admin123 |
+| Admin    | admin                                       | V4RlA_F3mb0yAnto!@# |
 | User Tes | [test@example.com](mailto:test@example.com) | anggota123 |
 
 
