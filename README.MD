@@ -188,7 +188,7 @@ http://127.0.0.1:8000
 | Peran    | Username                                    | Password |
 | :------- | :------------------------------------------ | :------- |
 | Admin    | admin                                       | V4RlA_F3mb0yAnto!@# |
-| User Tes | [test@example.com](mailto:test@example.com) | anggota123 |
+| User Tes | [test@example.com](mailto:test@example.com) | nE0*P3rpU5 |
 
 
 ### 🧩 Alur Fitur

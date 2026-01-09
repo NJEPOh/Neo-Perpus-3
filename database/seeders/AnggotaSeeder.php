@@ -11,7 +11,7 @@ class AnggotaSeeder extends Seeder
     public function run(): void
     {
         // Password default untuk semua akun (biar mudah testing)
-        $passwordDefault = Hash::make('anggota123');
+        $passwordDefault = Hash::make('nE0*P3rpU5');
 
         $data = [
             [
